@@ -1,0 +1,27 @@
+.common_button {
+    border-radius: 20px;
+    background-color: rgb(253, 243, 225);
+    font-weight: bold;
+    border: none;
+    margin: 10px;
+    padding: 10px;
+}
+
+.common_button.red {
+    background-color:red;
+    color: white;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.common_button.link {
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+}
+.common_button.link:hover {
+    background-color: black;
+    color: white;
+}

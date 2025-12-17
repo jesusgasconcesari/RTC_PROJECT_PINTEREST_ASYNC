@@ -1,0 +1,29 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 5fr 2fr;
+  align-items: center;
+  justify-content:  space-between;
+}
+
+#gallery {
+  column-count: 4;
+  column-gap: 15px;
+}
+
+#gallery > div {
+  break-inside: avoid;
+}
+
+
+@media (max-width: 768px) {
+  #gallery {
+    column-count: 2;
+  }
+}
