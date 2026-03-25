@@ -1,0 +1,28 @@
+.common_button {
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-primary-bg);
+  font-weight: bold;
+  border: none;
+  margin: var(--spacing-sm);
+  padding: var(--spacing-sm);
+}
+
+.common_button.red {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: var(--font-size-xl);
+  font-weight: lighter;
+}
+
+.common_button.link {
+  background-color: transparent;
+  color: var(--color-black);
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+  padding: var(--spacing-sm);
+}
+
+.common_button.link:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}

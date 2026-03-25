@@ -41,7 +41,7 @@ header > ul.nav-links {
   justify-content: space-around;
   height:100%;
   width:100%;
-    align-items: center;
+  align-items: center;
 }
 
 @media (max-width: 768px) {

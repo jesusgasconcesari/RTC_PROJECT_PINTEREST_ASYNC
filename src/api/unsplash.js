@@ -5,11 +5,20 @@ export const unsplash = createApi({
     accessKey : VITE_UNSPLASH_KEY
 })
 
-export function searchImages(query){
-    unsplash.search.getPhotos({query})
-        .then(result => console.log(result));
+export async function searchImages(query) {
+  try {
+    const result = await unsplash.search.getPhotos({ query });
 
-    return unsplash.search.getPhotos({query})
-        .then(result => result.response.results);
-        
+    // Si la API responde pero sin datos
+    if (!result.response || result.response.results.length === 0) {
+        console.error("Error al buscar imágenes:", error);
+      return [];
+    }
+
+    return result.response.results;
+
+  } catch (error) {
+    console.error("Error al buscar imágenes:", error);
+    return [];
+  }
 }

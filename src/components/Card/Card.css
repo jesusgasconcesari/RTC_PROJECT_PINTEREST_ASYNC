@@ -1,0 +1,142 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-white);
+  overflow: hidden;
+  margin: var(--spacing-sm);
+}
+
+.img-box {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-box > .Foto {
+  border-radius: var(--border-radius-md);
+  width: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20%;
+  opacity: 0;
+  background-color: var(--color-black);
+  border-radius: var(--border-radius-md);
+}
+
+.overlay > .icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: var(--spacing-sm);
+}
+
+.overlay > .icons > img {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+  cursor: pointer;
+}
+
+.overlay > .icons > .icon {
+  width: var(--icon-size-xl);
+  height: var(--icon-size-xl);
+  border-radius: var(--border-radius-full);
+  border: var(--border-light) solid var(--color-antique);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-antique);
+}
+
+.overlay > button {
+  top: 50%;
+}
+
+.icon > img {
+  width: var(--icon-size-md);
+}
+
+.icon > p {
+  font-size: var(--font-size-sm);
+  color: var(--color-black);
+  margin: 0;
+}
+
+.img-box:hover .overlay {
+  opacity: 1;
+  background-color: var(--color-overlay);
+}
+
+.author {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.UserFoto {
+  border-radius: var(--border-radius-full);
+  border: var(--border-thick) solid var(--color-black);
+  height: var(--avatar-size);
+  width: var(--avatar-size);
+  position: relative;
+  top: -35px;
+}
+
+.author > .info {
+  margin-top: -50px;
+  text-align: center;
+  color: var(--color-black);
+}
+
+.author > .info > h2 {
+  font-size: var(--font-size-lg);
+}
+
+.author > .info > p.date {
+  font-size: var(--font-size-md);
+  color: var(--color-gray);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    margin: var(--spacing-xs);
+  }
+
+  .overlay {
+    gap: 0;
+  }
+
+  .overlay > .icons > .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .overlay > button {
+    top: -10px;
+  }
+
+  .icon > img {
+    width: var(--icon-size-sm);
+  }
+
+  .icon > p {
+    font-size: var(--font-size-xs);
+  }
+}

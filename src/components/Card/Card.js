@@ -1,5 +1,5 @@
 import "./Card.css";
-import { Button } from "./Button.js";
+import { Button } from "../Button/Button.js";
 
 function randomColor(){
     return '#' + Math.floor(Math.random()*16777215).toString(16);
