@@ -22,8 +22,10 @@ export const Header = (logoURL, naviconsURLS) => {
 
     nav_links.append(li1, li2, li3);
 
-    const logo = document.createElement("div");
+    const logo = document.createElement("a");
     logo.classList.add("logo");
+    logo.href = "#";
+    
     const logoImg = document.createElement("img");
     logoImg.src = logoURL;
     logoImg.alt = "logo";

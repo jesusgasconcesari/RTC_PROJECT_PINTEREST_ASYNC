@@ -6,20 +6,30 @@ import { Header } from './components/Header/Header.js';
 
 Header("./src/assets/logopinteres 1.png", ["./src/assets/icon_bell.png", "./src/assets/CommentDots.png", "./src/assets/Frame6.png"]);
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const initialResults = await searchImages("welcome");
-  renderImages(initialResults);
-});
+const loadInitialImages = async () => {
+  try {
+    const images = await searchImages("Welcome");
+
+    if (!images.length) {
+      renderError("No se encontraron imágenes");
+      return;
+    }
+
+    renderImages(images);
+  } catch (error) {
+    renderError("Error al cargar imágenes");
+  }
+};
+
+
+document.addEventListener("DOMContentLoaded", loadInitialImages);
 
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 
 const logo = document.querySelector(".logo");
 
-logo.addEventListener("click", async () => {
-  const initialResults = await searchImages("welcome");
-  renderImages(initialResults);
-});
+logo.addEventListener("click", loadInitialImages);
 
 form.addEventListener("submit",async(e) =>{
   e.preventDefault();
